@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Docs</title> <!-- Fake title -->
+    <link rel="icon" type="image/png" href="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_document_x16.png"> <!-- Fake Google Docs Favicon -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vultra proxy</h1>
+        <input type="text" id="urlInput" placeholder="Your unblocking journey starts here..." />
+        <button onclick="proxy()">Go</button> 
+        <br>
+        <p>Press Q to change sites quickly!</p>
+    </div>
+
+    <script>
+        // URL Proxy Function
+        function proxy() {
+            let url = document.getElementById("urlInput").value.trim();
+            if (!url.startsWith("http")) {
+                url = "https://" + url;
+            }
+            window.location.href = `https://vultraproxy.parthasaarathy-krishna.workers.dev/?url=${encodeURIComponent(url)}`;
+        }
+
+        // Boss Key (Press "Esc" or "Q" to hide)
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape" || event.key.toLowerCase() === "q") {
+                window.location.href = "https://www.google.com"; // Redirect to Google
+            }
+        });
+
+        // Randomly Change Tab Title
+        const titles = ["Google Docs", "Math Homework", "School Dashboard", "History Notes"];
+        setInterval(() => {
+            document.title = titles[Math.floor(Math.random() * titles.length)];
+        }, 5000); // Change title every 5 seconds
+    </script>
+</body>
+</html>
