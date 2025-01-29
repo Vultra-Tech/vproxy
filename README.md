@@ -19,6 +19,9 @@
 
 > [!NOTE]
 > If you'd like to get links, support, or other things open a discussion.
+## Files
+index.html is the main file for our website, currently hosted at [this link.](http://vultra-proxy.rf.gd)  
+We run our proxy of off Cloudflare; worker.js is our worker code.
 
 ## Contribution
 
